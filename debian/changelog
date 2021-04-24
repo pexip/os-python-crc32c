@@ -1,0 +1,51 @@
+python-crc32c (2.2-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Fix baseline violation on amd64/arm64/i386 and FTBFS on armhf
+    if built on 64bit hardware. (Closes: #983815)
+
+ -- Adrian Bunk <bunk@debian.org>  Sat, 24 Apr 2021 10:56:22 +0300
+
+python-crc32c (2.2-1) unstable; urgency=medium
+
+  [ upstream ]
+  * new release
+
+  [ Jonas Smedegaard ]
+  * drop patch adopted upstream
+  * copyright: update coverage
+
+ -- Jonas Smedegaard <dr@jones.dk>  Mon, 02 Nov 2020 21:25:39 +0100
+
+python-crc32c (2.1-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Patch: HWCAP_CRC32 is already defined on arm64. Fixes FTBFS. Closes: #972217
+
+ -- Stefano Rivera <stefanor@debian.org>  Sat, 17 Oct 2020 19:47:59 -0700
+
+python-crc32c (2.1-1) unstable; urgency=medium
+
+  [ upstream ]
+  * new release
+
+  [ Jonas Smedegaard ]
+  * enable autopkgtest
+  * use debhelper compatibility level 12 (not 13)
+    to ease backporting
+  * copyright: update coverage
+
+ -- Jonas Smedegaard <dr@jones.dk>  Fri, 02 Oct 2020 16:49:26 +0200
+
+python-crc32c (2.0.1-2) unstable; urgency=medium
+
+  * release to unstable
+
+ -- Jonas Smedegaard <dr@jones.dk>  Thu, 16 Jul 2020 11:12:01 +0200
+
+python-crc32c (2.0.1-1) experimental; urgency=low
+
+  * initial packaging
+    closes: bug#964856
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sat, 11 Jul 2020 11:18:20 +0200

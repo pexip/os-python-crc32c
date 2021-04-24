@@ -1,0 +1,28 @@
+Description: Fix baseline violations on x86 and arm
+ These extensions are not part of the baseline of any port.
+Author: Adrian Bunk <bunk@debian.org>
+
+--- python-crc32c-2.2.orig/setup.py
++++ python-crc32c-2.2/setup.py
+@@ -39,10 +39,6 @@ def get_extra_compile_args(is_intel, is_
+     comp = distutils.ccompiler.get_default_compiler()
+     if comp == 'msvc':
+         return ['/O2']
+-    elif is_intel:
+-        return ['-O3', '-msse4.2', '-mpclmul']
+-    elif is_arm:
+-        return ['-O3', '-march=armv8-a+crc+crypto']
+     else:
+         return ['-O3']
+ 
+@@ -63,10 +59,6 @@ class _build_ext(build_ext):
+         is_arm = platform in ['aarch64_be', 'aarch64', 'armv8b', 'armv8l']
+         distutils.log.info("platform: %s, is_intel: %d, is_arm: %d", platform, is_intel, is_arm)
+         self.distribution.ext_modules[0].extra_compile_args = get_extra_compile_args(is_intel, is_arm)
+-        if is_intel:
+-            self.distribution.ext_modules[0].define_macros += [('IS_INTEL', None)]
+-        elif is_arm:
+-            self.distribution.ext_modules[0].define_macros += [('IS_ARM', None)]
+         build_ext.run(self)
+ 
+ 
