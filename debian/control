@@ -1,25 +1,21 @@
 Source: python-crc32c
 Section: python
 Priority: optional
-Maintainer: Jonas Smedegaard <dr@jones.dk>
+Maintainer: Pexip AS <packaging@pexip.com>
+XSBC-Pexip-Original-Maintainer: Jonas Smedegaard <dr@jones.dk>
 Build-Depends:
- debhelper-compat (= 12),
- dh-sequence-python3,
- python3-all-dev,
- python3-setuptools,
+ debhelper-compat (= 12), dh-python, python3-all-dev, python3-setuptools
 Standards-Version: 4.5.0
 Vcs-Git: https://salsa.debian.org/debian/python-crc32c.git
 Vcs-Browser: https://salsa.debian.org/debian/python-crc32c
 Homepage: https://github.com/ICRAR/crc32c
 Rules-Requires-Root: no
 Testsuite: autopkgtest-pkg-python
+XS-Pexip-Upstream: http://ftp.debian.org/debian/ sid
 
 Package: python3-crc32c
 Architecture: any
-Depends:
- ${misc:Depends},
- ${python3:Depends},
- ${shlibs:Depends},
+Depends: ${python3:Depends}, ${misc:Depends}, ${shlibs:Depends},
 Description: python implementation in hardware and software of crc32c
  crc32c is a python package
  implementing the crc32c checksum algorithm.
